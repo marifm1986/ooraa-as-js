@@ -87,9 +87,15 @@ export function Hero() {
       });
   };
 
-  return <div className="relative w-full h-[500px] bg-cover bg-center" style={{
-    backgroundImage: "url('https://uploadthingy.s3.us-west-1.amazonaws.com/5LoAU3D7WJ9ZXEfMSShGDK/image1.jpg')"
-  }}>
+  return <div className="relative w-full h-[750px]  " >
+    <div className="w-full h-full bg-cover bg-center" style={{
+      backgroundImage: "url('images/hero_image.jpg')",
+
+    }}>
+
+    </div>
+
+
     <div className="absolute inset-0 bg-black bg-opacity-40"></div>
     <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-12 lg:px-24">
       <div className="max-w-2xl">
@@ -99,8 +105,62 @@ export function Hero() {
         <p className="text-xl text-white mb-6">
           Jagdeep Singh has provided debt relief services since 2005.
         </p>
+        <div className="bg-white bg-opacity-95 p-6 rounded-lg mb-8 max-w-xl shadow-xl border-l-4 border-[#b08c4f]">
+          <ul className="space-y-4 text-left">
+            <li className="flex items-start">
+              <span className="flex-shrink-0 bg-[#1a2f5a] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
+                ✓
+              </span>
+              <div>
+                <span className="font-bold text-[#1a2f5a] text-lg">
+                  Save up to 60%{' '}
+                </span>
+                <span className="text-gray-700">
+                  Live Free from Debt Drama
+                </span>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <span className="flex-shrink-0 bg-[#1a2f5a] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
+                ✓
+              </span>
+              <div>
+                <span className="font-bold text-[#1a2f5a] text-lg">
+                  No Upfront Fees –{' '}
+                </span>
+                <span className="text-gray-700">
+                  Pay Only When You See Results
+                </span>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <span className="flex-shrink-0 bg-[#1a2f5a] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
+                ✓
+              </span>
+              <div>
+                <span className="font-bold text-[#1a2f5a] text-lg">
+                  Faster Than Minimum Payments –{' '}
+                </span>
+                <span className="text-gray-700">
+                  Debt-Free in 6–48 Months
+                </span>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <span className="flex-shrink-0 bg-[#1a2f5a] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
+                ✓
+              </span>
+              <div>
+                <span className="font-bold text-[#1a2f5a] text-lg">
+                  Trusted by Thousands –{' '}
+                </span>
+                <span className="text-gray-700">With a Human Touch</span>
+              </div>
+            </li>
+          </ul>
+        </div>
         <div className="flex flex-wrap gap-4">
-        
+
           <button className="bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-6 py-3 rounded" onClick={openModal}>
             REQUEST A QUOTE
           </button>

@@ -57,8 +57,8 @@ export function Header() {
 
     const templateParams = {
       to_email: 'oxaleinfo@gmail.com',
-      emailSubject:'Request a Quote Mail from Jugdeep Sing | OORAA',
-      fromName:'Inder Walia',
+      emailSubject: 'Request a Quote Mail from Jugdeep Sing | OORAA',
+      fromName: 'Inder Walia',
       first_name: `${formData.firstName} ${formData.lastName}`,
       user_email: formData.email,
       user_phone: formData.phone,
@@ -87,29 +87,27 @@ export function Header() {
         setSubmitError(true);
       });
   };
-  return <header className="bg-white text-[#1a2f5a] py-4 shadow-sm">
-    <div className="container mx-auto px-4 flex justify-between items-center">
-      <div className="flex items-center">
-        <img src="/Juddeep_Sing_Logo.webp" alt="Jagdeep Singh Logo" className="h-12" />
-      </div>
+  return <header className="bg-white text-[#1a2f5a] shadow-sm min-h-[105px] flex-grow-0 font-medium">
+    <div className="container min-w-[100%] mx-auto px-[40px] flex gap-4  items-center">
+      <a className="flex items-center my-[20px] mr-[25px]">
+        <img src="/Juddeep_Sing_Logo.jpg" alt="Jagdeep Singh Logo" className="h-[65px]" />
+      </a>
       <nav className="hidden md:flex space-x-6">
         <a href="#" className="hover:text-[#b08c4f]">
-          Home
+          Insurance Solutions
         </a>
         <a href="#" className="hover:text-[#b08c4f]">
-          About Us
+          Service Center
         </a>
         <a href="#" className="hover:text-[#b08c4f]">
-          Debt Relief Services
+          About
         </a>
         <a href="#" className="hover:text-[#b08c4f]">
           Contact
         </a>
-        <a href="#" className="hover:text-[#b08c4f]">
-          Resources
-        </a>
+
       </nav>
-      <div className="flex items-center">
+      <div className="flex items-center ml-auto">
         <PhoneIcon className="w-4 h-4 mr-2 text-[#1a2f5a]" />
         <a href="tel:559-277-5580" className="hidden md:inline text-[#1a2f5a] hover:underline hover:decoration-[#b08c4f]">
           559-277-5580
@@ -118,103 +116,103 @@ export function Header() {
           GET A FREE QUOTE
         </button>
       </div>
-       {/* Quote Request Modal */}
-    {isModalOpen && <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-md">
-        <div className="p-6">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-bold text-[#1a2f5a]">
-              Request a Free Quote
-            </h3>
-            <button onClick={closeModal} className="text-gray-500 hover:text-gray-700">
-              ✕
-            </button>
+      {/* Quote Request Modal */}
+      {isModalOpen && <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-lg shadow-xl w-full max-w-md">
+          <div className="p-6">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-bold text-[#1a2f5a]">
+                Request a Free Quote
+              </h3>
+              <button onClick={closeModal} className="text-gray-500 hover:text-gray-700">
+                ✕
+              </button>
+            </div>
+            {submitSuccess ? <div className="py-8 text-center">
+              <div className="mb-4 text-green-500 text-5xl">✓</div>
+              <h4 className="text-xl font-semibold mb-2">Thank You!</h4>
+              <p className="text-gray-600">
+                Your request has been submitted successfully.
+              </p>
+              <p className="text-gray-600 mt-1">
+                We'll be in touch with you shortly.
+              </p>
+            </div> : submitError ? <div className="py-8 text-center">
+              <div className="mb-4 text-red-500 text-5xl">✕</div>
+              <h4 className="text-xl font-semibold mb-2">
+                Something went wrong
+              </h4>
+              <p className="text-gray-600">
+                We couldn't process your request.
+              </p>
+              <button onClick={() => setSubmitError(false)} className="mt-4 bg-[#1a2f5a] hover:bg-[#2a4070] text-white px-4 py-2 rounded">
+                Try Again
+              </button>
+            </div> : <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                    First Name*
+                  </label>
+                  <input id="firstName" type="text" className="p-2 border border-gray-300 rounded w-full" required value={formData.firstName} onChange={handleChange} />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                    Last Name*
+                  </label>
+                  <input id="lastName" type="text" className="p-2 border border-gray-300 rounded w-full" required value={formData.lastName} onChange={handleChange} />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email*
+                  </label>
+                  <input id="email" type="email" className="p-2 border border-gray-300 rounded w-full" required value={formData.email} onChange={handleChange} />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Phone*
+                  </label>
+                  <input id="phone" type="tel" className="p-2 border border-gray-300 rounded w-full" required value={formData.phone} onChange={handleChange} />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="debtAmount" className="block text-sm font-medium text-gray-700 mb-1">
+                  Select your Debt Amount*
+                </label>
+                <select id="debtAmount" className="p-2 border border-gray-300 rounded w-full bg-white" required value={formData.debtAmount} onChange={handleChange}>
+                  <option value="" disabled>
+                    Select your debt amount
+                  </option>
+                  {debtAmounts.map((amount, index) => <option key={index} value={amount}>
+                    {amount}
+                  </option>)}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-1">
+                  Select your State*
+                </label>
+                <select id="state" className="p-2 border border-gray-300 rounded w-full bg-white" required value={formData.state} onChange={handleChange}>
+                  <option value="" disabled>
+                    Select your state
+                  </option>
+                  {usStates.map((state, index) => <option key={index} value={state}>
+                    {state}
+                  </option>)}
+                </select>
+              </div>
+              <button type="submit" className="w-full bg-[#b08c4f] hover:bg-[#c9a05a] text-white py-3 px-4 rounded font-medium flex justify-center items-center" disabled={isSubmitting}>
+                {isSubmitting ? <>
+                  <span className="animate-spin mr-2">⟳</span>
+                  SUBMITTING...
+                </> : 'SUBMIT REQUEST'}
+              </button>
+            </form>}
           </div>
-          {submitSuccess ? <div className="py-8 text-center">
-            <div className="mb-4 text-green-500 text-5xl">✓</div>
-            <h4 className="text-xl font-semibold mb-2">Thank You!</h4>
-            <p className="text-gray-600">
-              Your request has been submitted successfully.
-            </p>
-            <p className="text-gray-600 mt-1">
-              We'll be in touch with you shortly.
-            </p>
-          </div> : submitError ? <div className="py-8 text-center">
-            <div className="mb-4 text-red-500 text-5xl">✕</div>
-            <h4 className="text-xl font-semibold mb-2">
-              Something went wrong
-            </h4>
-            <p className="text-gray-600">
-              We couldn't process your request.
-            </p>
-            <button onClick={() => setSubmitError(false)} className="mt-4 bg-[#1a2f5a] hover:bg-[#2a4070] text-white px-4 py-2 rounded">
-              Try Again
-            </button>
-          </div> : <form className="space-y-4" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                  First Name*
-                </label>
-                <input id="firstName" type="text" className="p-2 border border-gray-300 rounded w-full" required value={formData.firstName} onChange={handleChange} />
-              </div>
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                  Last Name*
-                </label>
-                <input id="lastName" type="text" className="p-2 border border-gray-300 rounded w-full" required value={formData.lastName} onChange={handleChange} />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email*
-                </label>
-                <input id="email" type="email" className="p-2 border border-gray-300 rounded w-full" required value={formData.email} onChange={handleChange} />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone*
-                </label>
-                <input id="phone" type="tel" className="p-2 border border-gray-300 rounded w-full" required value={formData.phone} onChange={handleChange} />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="debtAmount" className="block text-sm font-medium text-gray-700 mb-1">
-                Select your Debt Amount*
-              </label>
-              <select id="debtAmount" className="p-2 border border-gray-300 rounded w-full bg-white" required value={formData.debtAmount} onChange={handleChange}>
-                <option value="" disabled>
-                  Select your debt amount
-                </option>
-                {debtAmounts.map((amount, index) => <option key={index} value={amount}>
-                  {amount}
-                </option>)}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-1">
-                Select your State*
-              </label>
-              <select id="state" className="p-2 border border-gray-300 rounded w-full bg-white" required value={formData.state} onChange={handleChange}>
-                <option value="" disabled>
-                  Select your state
-                </option>
-                {usStates.map((state, index) => <option key={index} value={state}>
-                  {state}
-                </option>)}
-              </select>
-            </div>
-            <button type="submit" className="w-full bg-[#b08c4f] hover:bg-[#c9a05a] text-white py-3 px-4 rounded font-medium flex justify-center items-center" disabled={isSubmitting}>
-              {isSubmitting ? <>
-                <span className="animate-spin mr-2">⟳</span>
-                SUBMITTING...
-              </> : 'SUBMIT REQUEST'}
-            </button>
-          </form>}
         </div>
-      </div>
-    </div>}
+      </div>}
     </div>
   </header>;
 }
