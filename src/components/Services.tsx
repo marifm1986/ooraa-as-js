@@ -1,27 +1,31 @@
 import { PhoneCall, FileText, HandCoins } from 'lucide-react';
+import { AnimatedElement } from './AnimatedElements';
 
 export function Services() {
   const services = [
     {
       title: "Tell us about your debts",
       description: "Call for a 100% confidential, no-obligation debt consultation. Our debt specialists will talk to you and understand your goals and hardships. They will determine your eligibility and select a personalized debt relief program that will match your financial needs. There are no upfront fees.",
-      icon: PhoneCall
+      icon: PhoneCall,
+      delay: 0.1
     },
     {
       title: "Get Your Personal Customized Program",
       description: "As soon as you select a debt relief program our debt reduction professionals will work with you to combine all your unsecured debt and design a one-time low monthly payment program customized to meet your individual needs.",
-      icon: FileText
+      icon: FileText,
+      delay: 0.2
     },
     {
       title: "Freedom From Debt",
       description: "You are now on the path to complete debt freedom. Our debt relief professionals will negotiate with your creditors to settle for lower debt repayment and settle your debts one by one until all your enrolled debts are resolved. You can now move forward and enjoy a stress-free life.",
-      icon: HandCoins
+      icon: HandCoins,
+      delay: 0.3
     }
   ];
 
   return (
     <div className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container max-w-[1425px] px-[60px] mx-auto my-0">
         <h2 className="text-3xl font-bold mb-12 text-center">
           Getting Started is Simple
         </h2>
@@ -29,19 +33,21 @@ export function Services() {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex justify-center mb-4">
-                  <div className="bg-[#b08c4f] p-3 rounded-full">
-                    <IconComponent className="w-6 h-6 text-white" />
+              <AnimatedElement type="slideRight" delay={service.delay}>
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:drop-shadow-2xl  transition-all group">
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-[#b08c4f] p-3 rounded-full group-hover:-translate-y-2 transition-all">
+                      <IconComponent className="w-6 h-6 text-white " />
+                    </div>
                   </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-center">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-center">
-                  {service.description}
-                </p>
-              </div>
+              </AnimatedElement>
             );
           })}
         </div>

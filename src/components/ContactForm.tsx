@@ -2,7 +2,7 @@ import React from 'react';
 import { PhoneIcon, MailIcon, MapPinIcon } from 'lucide-react';
 export function ContactForm() {
   return <div className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4">
+      <div className="container  max-w-[1425px] px-[60px] mx-auto my-0">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 bg-[#1a2f5a] text-white p-8 rounded-l-lg">
             <h2 className="text-2xl font-bold mb-8">Contact Us</h2>
