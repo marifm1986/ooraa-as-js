@@ -51,9 +51,6 @@ export function Hero() {
       [id]: value
     }));
   };
-
-
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -103,9 +100,7 @@ export function Hero() {
           Jagdeep Singh has provided debt relief services since 2005.
         </p>
         <div className="flex flex-wrap gap-4">
-          <button className="bg-[#1a2f5a] hover:bg-[#2a4070] text-white px-6 py-3 rounded">
-            CONNECT WITH US
-          </button>
+        
           <button className="bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-6 py-3 rounded" onClick={openModal}>
             REQUEST A QUOTE
           </button>
