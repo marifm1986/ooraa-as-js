@@ -103,7 +103,7 @@ export function Hero() {
           Your One Stop Shop
         </h1>
         <p className="text-xl text-white mb-6">
-          Jagdeep Singh has provided debt relief services since 2005.
+          Jagdeep Singh has provided <strong className="font-normal text-[#ffc665]">Debt Relief</strong> services since 2005.
         </p>
         <div className="bg-white bg-opacity-95 p-6 rounded-lg mb-8 max-w-xl shadow-xl border-l-4 border-[#b08c4f]">
           <ul className="space-y-4 text-left">
