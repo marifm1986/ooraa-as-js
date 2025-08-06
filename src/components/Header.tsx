@@ -111,9 +111,9 @@ export function Header() {
       </nav>
       <div className="flex items-center">
         <PhoneIcon className="w-4 h-4 mr-2 text-[#1a2f5a]" />
-        <span className="hidden md:inline text-[#1a2f5a]">
-          1-800-555-0123
-        </span>
+        <a href="tel:559-277-5580" className="hidden md:inline text-[#1a2f5a] hover:underline hover:decoration-[#b08c4f]">
+          559-277-5580
+        </a>
         <button className="ml-4 bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-4 py-2 rounded-md text-sm" onClick={openModal}>
           GET A FREE QUOTE
         </button>

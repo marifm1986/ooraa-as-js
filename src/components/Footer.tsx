@@ -79,9 +79,10 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
             <ul className="space-y-2">
-              <li>123 Main Street, Suite 100</li>
-              <li>Anytown, CA 12345</li>
-              <li>Phone: 1-800-555-0123</li>
+                <li>4185 W Figarden Drive</li>
+                <li>Suite 101</li>
+                <li>Fresno, CA 93722</li>
+              <li>Phone: 559-277-5580</li>
               <li>Email: info@jagdeepsingh.com</li>
             </ul>
           </div>

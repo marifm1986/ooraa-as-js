@@ -24,7 +24,7 @@ export function FeatureCards() {
           <div className="bg-white p-6 flex flex-col items-center text-center">
             <PhoneIcon className="w-8 h-8 text-[#1a2f5a] mb-3" />
             <h3 className="font-semibold mb-1">Already a client?</h3>
-            <p className="text-sm text-gray-600">Call: 1-800-555-0123</p>
+            <p className="text-sm text-gray-600">Call: 559-277-5580</p>
           </div>
         </div>
       </div>
