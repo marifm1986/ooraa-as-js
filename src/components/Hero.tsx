@@ -87,7 +87,7 @@ export function Hero() {
       });
   };
 
-  return <div className="relative w-full h-[750px]  " >
+  return <div className="relative w-full h-[750px] md:h-[750px] min-h-[700px] mb-16 md:mb-0" >
     <div className="w-full h-full bg-cover bg-center" style={{
       backgroundImage: "url('images/hero_image.jpg')",
 
@@ -97,71 +97,71 @@ export function Hero() {
 
 
     <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-    <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-12 lg:px-24">
+    <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-12 lg:px-24 py-8">
       <div className="max-w-2xl">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
           Your One Stop Shop
         </h1>
-        <p className="text-xl text-white mb-6">
+        <p className="text-lg md:text-xl text-white mb-4 md:mb-6">
           Jagdeep Singh has provided <strong className="font-normal text-[#ffc665]">Debt Relief</strong> services since 2005.
         </p>
-        <div className="bg-white bg-opacity-95 p-6 rounded-lg mb-8 max-w-xl shadow-xl border-l-4 border-[#b08c4f]">
-          <ul className="space-y-4 text-left">
+        <div className="bg-white bg-opacity-95 p-4 md:p-6 rounded-lg mb-6 md:mb-8 max-w-xl shadow-xl border-l-4 border-[#b08c4f]">
+          <ul className="space-y-3 md:space-y-4 text-left">
             <li className="flex items-start">
-              <span className="flex-shrink-0 bg-[#1a2f5a] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
+              <span className="flex-shrink-0 bg-[#b08c4f] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
                 ✓
               </span>
               <div>
-                <span className="font-bold text-[#1a2f5a] text-lg">
+                <span className="font-bold text-[#1a2f5a] text-base md:text-lg">
                   Save up to 60%{' '}
                 </span>
-                <span className="text-gray-700">
+                <span className="text-gray-700 text-sm md:text-base">
                   Live Free from Debt Drama
                 </span>
               </div>
             </li>
             <li className="flex items-start">
-              <span className="flex-shrink-0 bg-[#1a2f5a] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
+              <span className="flex-shrink-0 bg-[#b08c4f] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
                 ✓
               </span>
               <div>
-                <span className="font-bold text-[#1a2f5a] text-lg">
+                <span className="font-bold text-[#1a2f5a] text-base md:text-lg">
                   No Upfront Fees –{' '}
                 </span>
-                <span className="text-gray-700">
+                <span className="text-gray-700 text-sm md:text-base">
                   Pay Only When You See Results
                 </span>
               </div>
             </li>
             <li className="flex items-start">
-              <span className="flex-shrink-0 bg-[#1a2f5a] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
+              <span className="flex-shrink-0 bg-[#b08c4f] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
                 ✓
               </span>
               <div>
-                <span className="font-bold text-[#1a2f5a] text-lg">
+                <span className="font-bold text-[#1a2f5a] text-base md:text-lg">
                   Faster Than Minimum Payments –{' '}
                 </span>
-                <span className="text-gray-700">
+                <span className="text-gray-700 text-sm md:text-base">
                   Debt-Free in 6–48 Months
                 </span>
               </div>
             </li>
             <li className="flex items-start">
-              <span className="flex-shrink-0 bg-[#1a2f5a] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
+              <span className="flex-shrink-0 bg-[#b08c4f] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">
                 ✓
               </span>
               <div>
-                <span className="font-bold text-[#1a2f5a] text-lg">
+                <span className="font-bold text-[#1a2f5a] text-base md:text-lg">
                   Trusted by Thousands –{' '}
                 </span>
-                <span className="text-gray-700">With a Human Touch</span>
+                <span className="text-gray-700 text-sm md:text-base">With a Human Touch</span>
               </div>
             </li>
           </ul>
         </div>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 mb-8 md:mb-6">
 
-          <button className="bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-6 py-3 rounded" onClick={openModal}>
+          <button className="bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative z-10" onClick={openModal}>
             REQUEST A QUOTE
           </button>
         </div>

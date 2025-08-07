@@ -1,7 +1,7 @@
 "use client"
 import emailjs from "emailjs-com";
 import React, { useState } from 'react';
-import { PhoneIcon } from 'lucide-react';
+import { PhoneIcon, Menu, X } from 'lucide-react';
 const usStates = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 // Debt amount options
 const debtAmounts = ['$0 - $4,999', '$5,000 - $7,499', '$7,500 - $9,999', '$10,000 - $14,999', '$15,000 - $19,999', '$20,000 - $29,999', '$30,000 - $39,999', '$40,000 - $49,999', '$50,000 - $59,999', '$60,000 - $69,999', '$70,000 - $79,999', '$80,000 - $89,999', '$90,000 - $99,999', '$100,000+'];
@@ -10,9 +10,8 @@ const EMAILJS_SERVICE_ID = 'service_ymtmpcm';
 const EMAILJS_TEMPLATE_ID = 'template_fqsfnmh';
 const EMAILJS_USER_ID = 'HyA1m56REQS5-AVCx';
 export function Header() {
-
-
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
@@ -87,132 +86,277 @@ export function Header() {
         setSubmitError(true);
       });
   };
-  return <header className="bg-white text-[#1a2f5a] shadow-sm min-h-[105px] flex-grow-0 font-medium">
-    <div className="container min-w-[100%] mx-auto px-[40px] flex gap-4  items-center">
-      <a className="flex items-center my-[20px] mr-[25px]">
-        <img src="/Juddeep_Sing_Logo.jpg" alt="Jagdeep Singh Logo" className="h-[65px]" />
-      </a>
-      <nav className="hidden md:flex space-x-6">
-        <a href="#" className="hover:text-[#b08c4f]">
-          Insurance Solutions
-        </a>
-        <a href="#" className="hover:text-[#b08c4f]">
-          Service Center
-        </a>
-        <a href="#" className="hover:text-[#b08c4f]">
-          About
-        </a>
-        <a href="#" className="hover:text-[#b08c4f]">
-          Contact
-        </a>
+  return (
+    <>
+      <header className="bg-white text-[#1a2f5a] shadow-sm min-h-[60px] md:min-h-[105px] flex-grow-0 font-medium">
+        <div className="container min-w-[100%] mx-auto px-4 md:px-[40px] flex items-center justify-between">
+          {/* Logo */}
+          <a className="flex items-center my-3 md:my-[20px] mr-4 md:mr-[25px]">
+            <img 
+              src="/Juddeep_Sing_Logo.jpg" 
+              alt="Jagdeep Singh Logo" 
+              className="h-8 sm:h-10 md:h-[65px]" 
+            />
+          </a>
 
-      </nav>
-      <div className="flex items-center ml-auto">
-        <PhoneIcon className="w-4 h-4 mr-2 text-[#1a2f5a]" />
-        <a href="tel:559-277-5580" className="hidden md:inline text-[#1a2f5a] hover:underline hover:decoration-[#b08c4f]">
-          559-277-5580
-        </a>
-        <button className="ml-4 bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-4 py-2 rounded-md text-sm" onClick={openModal}>
-          GET A FREE QUOTE
-        </button>
-      </div>
-      {/* Quote Request Modal */}
-      {isModalOpen && <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-lg shadow-xl w-full max-w-md">
-          <div className="p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold text-[#1a2f5a]">
-                Request a Free Quote
-              </h3>
-              <button onClick={closeModal} className="text-gray-500 hover:text-gray-700">
-                ✕
-              </button>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex space-x-6 flex-1 justify-center">
+            <a href="#" className="hover:text-[#b08c4f] transition-colors">
+              Insurance Solutions
+            </a>
+            <a href="#" className="hover:text-[#b08c4f] transition-colors">
+              Service Center
+            </a>
+            <a href="#" className="hover:text-[#b08c4f] transition-colors">
+              About
+            </a>
+            <a href="#" className="hover:text-[#b08c4f] transition-colors">
+              Contact
+            </a>
+          </nav>
+
+          {/* Desktop Contact & CTA */}
+          <div className="hidden md:flex items-center">
+            <div className="flex items-center mr-4">
+              <PhoneIcon className="w-4 h-4 mr-2 text-[#1a2f5a]" />
+              <a 
+                href="tel:559-277-5580" 
+                className="text-[#1a2f5a] hover:underline hover:decoration-[#b08c4f] transition-all"
+              >
+                559-277-5580
+              </a>
             </div>
-            {submitSuccess ? <div className="py-8 text-center">
-              <div className="mb-4 text-green-500 text-5xl">✓</div>
-              <h4 className="text-xl font-semibold mb-2">Thank You!</h4>
-              <p className="text-gray-600">
-                Your request has been submitted successfully.
-              </p>
-              <p className="text-gray-600 mt-1">
-                We'll be in touch with you shortly.
-              </p>
-            </div> : submitError ? <div className="py-8 text-center">
-              <div className="mb-4 text-red-500 text-5xl">✕</div>
-              <h4 className="text-xl font-semibold mb-2">
-                Something went wrong
-              </h4>
-              <p className="text-gray-600">
-                We couldn't process your request.
-              </p>
-              <button onClick={() => setSubmitError(false)} className="mt-4 bg-[#1a2f5a] hover:bg-[#2a4070] text-white px-4 py-2 rounded">
-                Try Again
-              </button>
-            </div> : <form className="space-y-4" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                    First Name*
-                  </label>
-                  <input id="firstName" type="text" className="p-2 border border-gray-300 rounded w-full" required value={formData.firstName} onChange={handleChange} />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                    Last Name*
-                  </label>
-                  <input id="lastName" type="text" className="p-2 border border-gray-300 rounded w-full" required value={formData.lastName} onChange={handleChange} />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email*
-                  </label>
-                  <input id="email" type="email" className="p-2 border border-gray-300 rounded w-full" required value={formData.email} onChange={handleChange} />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Phone*
-                  </label>
-                  <input id="phone" type="tel" className="p-2 border border-gray-300 rounded w-full" required value={formData.phone} onChange={handleChange} />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="debtAmount" className="block text-sm font-medium text-gray-700 mb-1">
-                  Select your Debt Amount*
-                </label>
-                <select id="debtAmount" className="p-2 border border-gray-300 rounded w-full bg-white" required value={formData.debtAmount} onChange={handleChange}>
-                  <option value="" disabled>
-                    Select your debt amount
-                  </option>
-                  {debtAmounts.map((amount, index) => <option key={index} value={amount}>
-                    {amount}
-                  </option>)}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-1">
-                  Select your State*
-                </label>
-                <select id="state" className="p-2 border border-gray-300 rounded w-full bg-white" required value={formData.state} onChange={handleChange}>
-                  <option value="" disabled>
-                    Select your state
-                  </option>
-                  {usStates.map((state, index) => <option key={index} value={state}>
-                    {state}
-                  </option>)}
-                </select>
-              </div>
-              <button type="submit" className="w-full bg-[#b08c4f] hover:bg-[#c9a05a] text-white py-3 px-4 rounded font-medium flex justify-center items-center" disabled={isSubmitting}>
-                {isSubmitting ? <>
-                  <span className="animate-spin mr-2">⟳</span>
-                  SUBMITTING...
-                </> : 'SUBMIT REQUEST'}
-              </button>
-            </form>}
+            <button 
+              className="bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-4 py-2 rounded-md text-sm transition-colors whitespace-nowrap" 
+              onClick={openModal}
+            >
+              GET A FREE QUOTE
+            </button>
+          </div>
+
+          {/* Mobile Menu Button & CTA */}
+          <div className="flex items-center md:hidden">
+            <button 
+              className="bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-2 py-1.5 rounded-md text-xs mr-2 transition-colors whitespace-nowrap" 
+              onClick={openModal}
+            >
+              GET A FREE QUOTE
+            </button>
+            <button
+              className="p-2 text-[#1a2f5a] hover:text-[#b08c4f] transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
-      </div>}
-    </div>
-  </header>;
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
+            <div className="px-4 py-3 space-y-3">
+              <a 
+                href="#" 
+                className="block py-2 text-[#1a2f5a] hover:text-[#b08c4f] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Insurance Solutions
+              </a>
+              <a 
+                href="#" 
+                className="block py-2 text-[#1a2f5a] hover:text-[#b08c4f] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Service Center
+              </a>
+              <a 
+                href="#" 
+                className="block py-2 text-[#1a2f5a] hover:text-[#b08c4f] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a 
+                href="#" 
+                className="block py-2 text-[#1a2f5a] hover:text-[#b08c4f] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
+              <div className="pt-3 border-t border-gray-200">
+                <a 
+                  href="tel:559-277-5580" 
+                  className="flex items-center py-2 text-[#1a2f5a] hover:text-[#b08c4f] transition-colors"
+                >
+                  <PhoneIcon className="w-4 h-4 mr-2" />
+                  559-277-5580
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
+      {/* Quote Request Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+            <div className="p-4 md:p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg md:text-xl font-bold text-[#1a2f5a]">
+                  Request a Free Quote
+                </h3>
+                <button onClick={closeModal} className="text-gray-500 hover:text-gray-700 text-xl">
+                  ✕
+                </button>
+              </div>
+              {submitSuccess ? (
+                <div className="py-8 text-center">
+                  <div className="mb-4 text-green-500 text-5xl">✓</div>
+                  <h4 className="text-xl font-semibold mb-2">Thank You!</h4>
+                  <p className="text-gray-600">
+                    Your request has been submitted successfully.
+                  </p>
+                  <p className="text-gray-600 mt-1">
+                    We'll be in touch with you shortly.
+                  </p>
+                </div>
+              ) : submitError ? (
+                <div className="py-8 text-center">
+                  <div className="mb-4 text-red-500 text-5xl">✕</div>
+                  <h4 className="text-xl font-semibold mb-2">
+                    Something went wrong
+                  </h4>
+                  <p className="text-gray-600">
+                    We couldn't process your request.
+                  </p>
+                  <button 
+                    onClick={() => setSubmitError(false)} 
+                    className="mt-4 bg-[#1a2f5a] hover:bg-[#2a4070] text-white px-4 py-2 rounded transition-colors"
+                  >
+                    Try Again
+                  </button>
+                </div>
+              ) : (
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                        First Name*
+                      </label>
+                      <input 
+                        id="firstName" 
+                        type="text" 
+                        className="p-2 border border-gray-300 rounded w-full focus:ring-2 focus:ring-[#b08c4f] focus:border-transparent outline-none transition-all" 
+                        required 
+                        value={formData.firstName} 
+                        onChange={handleChange} 
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                        Last Name*
+                      </label>
+                      <input 
+                        id="lastName" 
+                        type="text" 
+                        className="p-2 border border-gray-300 rounded w-full focus:ring-2 focus:ring-[#b08c4f] focus:border-transparent outline-none transition-all" 
+                        required 
+                        value={formData.lastName} 
+                        onChange={handleChange} 
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Email*
+                      </label>
+                      <input 
+                        id="email" 
+                        type="email" 
+                        className="p-2 border border-gray-300 rounded w-full focus:ring-2 focus:ring-[#b08c4f] focus:border-transparent outline-none transition-all" 
+                        required 
+                        value={formData.email} 
+                        onChange={handleChange} 
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                        Phone*
+                      </label>
+                      <input 
+                        id="phone" 
+                        type="tel" 
+                        className="p-2 border border-gray-300 rounded w-full focus:ring-2 focus:ring-[#b08c4f] focus:border-transparent outline-none transition-all" 
+                        required 
+                        value={formData.phone} 
+                        onChange={handleChange} 
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="debtAmount" className="block text-sm font-medium text-gray-700 mb-1">
+                      Select your Debt Amount*
+                    </label>
+                    <select 
+                      id="debtAmount" 
+                      className="p-2 border border-gray-300 rounded w-full bg-white focus:ring-2 focus:ring-[#b08c4f] focus:border-transparent outline-none transition-all" 
+                      required 
+                      value={formData.debtAmount} 
+                      onChange={handleChange}
+                    >
+                      <option value="" disabled>
+                        Select your debt amount
+                      </option>
+                      {debtAmounts.map((amount, index) => (
+                        <option key={index} value={amount}>
+                          {amount}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-1">
+                      Select your State*
+                    </label>
+                    <select 
+                      id="state" 
+                      className="p-2 border border-gray-300 rounded w-full bg-white focus:ring-2 focus:ring-[#b08c4f] focus:border-transparent outline-none transition-all" 
+                      required 
+                      value={formData.state} 
+                      onChange={handleChange}
+                    >
+                      <option value="" disabled>
+                        Select your state
+                      </option>
+                      {usStates.map((state, index) => (
+                        <option key={index} value={state}>
+                          {state}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <button 
+                    type="submit" 
+                    className="w-full bg-[#b08c4f] hover:bg-[#c9a05a] text-white py-3 px-4 rounded font-medium flex justify-center items-center transition-colors disabled:opacity-50" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <span className="animate-spin mr-2">⟳</span>
+                        SUBMITTING...
+                      </>
+                    ) : (
+                      'SUBMIT REQUEST'
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
