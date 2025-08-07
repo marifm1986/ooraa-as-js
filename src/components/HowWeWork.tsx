@@ -16,7 +16,7 @@ export function HowWeWork() {
     handleSubmit,
     handleRetry
   } = useQuoteForm({
-    emailSubject: 'Request a Quote Mail from Jagdeep Singh | OORAA',
+    emailSubject: 'Request a Quote Mail from Jagdeep Singh | Jugdeep Sing',
     fromName: 'Inder Walia'
   });
 
@@ -56,12 +56,12 @@ export function HowWeWork() {
               <div className="mb-3">
                 <img 
                   src="/images/hero_image.jpg" 
-                  alt="Tailored programs by Ooraa" 
+                  alt="Tailored programs by Jugdeep Sing" 
                   className="w-full h-[150px] object-cover rounded-lg"
                 />
               </div>
               <h3 className="text-lg font-semibold text-[#1a2f5a] mb-2">
-                Tailored programs by Ooraa
+                Tailored programs by Jugdeep Sing
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Our experts specialize in creating a specifically tailored program that will guide and work hand-in-hand with you to re-establish your financial stability.
@@ -131,7 +131,7 @@ export function HowWeWork() {
                 Customized and Flexible Programs, Just for You!
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                OORAA represents a company that is more interested in helping you through your difficult debt situation. You deserve a debt relief program that is as unique as you. We provide personalized and flexible programs specially tailored for you.
+                Jugdeep Sing represents a company that is more interested in helping you through your difficult debt situation. You deserve a debt relief program that is as unique as you. We provide personalized and flexible programs specially tailored for you.
               </p>
               <div className="flex justify-center">
                 <img 
