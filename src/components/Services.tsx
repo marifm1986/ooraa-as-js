@@ -1,7 +1,27 @@
+"use client"
 import { PhoneCall, FileText, HandCoins } from 'lucide-react';
 import { AnimatedElement } from './AnimatedElements';
+import { QuoteModal } from './QuoteModal';
+import { useQuoteForm } from './useQuoteForm';
 
 export function Services() {
+  // Modal state for the quote form
+  const {
+    isModalOpen,
+    isSubmitting,
+    submitSuccess,
+    submitError,
+    formData,
+    openModal,
+    closeModal,
+    handleChange,
+    handleSubmit,
+    handleRetry
+  } = useQuoteForm({
+    emailSubject: 'Request a Quote Mail from Jagdeep Singh | OORAA',
+    fromName: 'Inder Walia'
+  });
+
   const services = [
     {
       title: "Tell us about your debts",
@@ -51,7 +71,32 @@ export function Services() {
             );
           })}
         </div>
+        
+        {/* Call to Action Button */}
+        <div className="text-center mt-12">
+          <AnimatedElement type="slideUp" delay={0.4}>
+            <button 
+              onClick={openModal}
+              className="bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              GET A FREE QUOTE
+            </button>
+          </AnimatedElement>
+        </div>
       </div>
+
+      {/* Quote Modal */}
+      <QuoteModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        formData={formData}
+        isSubmitting={isSubmitting}
+        submitSuccess={submitSuccess}
+        submitError={submitError}
+        onSubmit={handleSubmit}
+        onChange={handleChange}
+        onRetry={handleRetry}
+      />
     </div>
   );
 }

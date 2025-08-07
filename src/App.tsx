@@ -2,6 +2,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { FeatureCards } from './components/FeatureCards';
 import { Services } from './components/Services';
+import { HowWeWork } from './components/HowWeWork';
 // import { AboutUs } from './components/AboutUs';
 import { Testimonials } from './components/Testimonials';
 import { ContactForm } from './components/ContactForm';
@@ -16,6 +17,7 @@ export function App() {
     <Hero />
     <FeatureCards />
     <Services />
+    <HowWeWork />
     <AboutUs />
     <CoreAreas />
     {/* <Blog /> */}

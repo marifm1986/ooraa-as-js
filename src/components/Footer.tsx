@@ -1,4 +1,3 @@
-import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 export function Footer() {
   return <footer className="bg-[#1a2f5a] text-white">
