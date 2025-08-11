@@ -8,14 +8,14 @@ export function Testimonials() {
     {
       id: 1,
       quote:
-        'Jagdeep Singh is wonderful with communication! This is a great all-around debt relief company.',
+        'This is a great all-around debt relief company.',
       author: 'Sarah Johnson',
       title: 'Client since 2020',
     },
     {
       id: 2,
       quote:
-        'I was drowning in debt before I found Jagdeep Singh. Their team helped me create a plan that actually worked for my situation.',
+        'Their team helped me create a plan that actually worked for my situation.',
       author: 'Michael Rodriguez',
       title: 'Client since 2021',
     },

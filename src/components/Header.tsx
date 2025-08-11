@@ -52,15 +52,7 @@ export function Header() {
 
           {/* Desktop Contact & CTA */}
           <div className="hidden md:flex items-center">
-            <div className="flex items-center mr-4">
-              <PhoneIcon className="w-4 h-4 mr-2 text-[#1a2f5a]" />
-              <a 
-                href="tel:559-277-5580" 
-                className="text-[#1a2f5a] hover:underline hover:decoration-[#b08c4f] transition-all"
-              >
-                559-277-5580
-              </a>
-            </div>
+           
             <button 
               className="bg-[#b08c4f] hover:bg-[#c9a05a] text-white px-4 py-2 rounded-md text-sm transition-colors whitespace-nowrap" 
               onClick={openModal}

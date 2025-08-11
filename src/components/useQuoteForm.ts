@@ -93,7 +93,6 @@ export function useQuoteForm(options: UseQuoteFormOptions = {}) {
       EMAILJS_USER_ID
     )
     .then((res) => {
-      console.log('Email sent successfully:', res);
       setSubmitSuccess(true);
       setIsSubmitting(false);
       setTimeout(() => {
