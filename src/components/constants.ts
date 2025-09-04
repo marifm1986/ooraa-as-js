@@ -18,9 +18,9 @@ export const debtAmounts = [
 ];
 
 // EmailJS configuration
-export const EMAILJS_SERVICE_ID = 'service_ymtmpcm';
-export const EMAILJS_TEMPLATE_ID = 'template_fqsfnmh';
-export const EMAILJS_USER_ID = 'HyA1m56REQS5-AVCx';
+export const EMAILJS_SERVICE_ID = 'service_y10sbcq';
+export const EMAILJS_TEMPLATE_ID = 'template_f9gkqnl';
+export const EMAILJS_USER_ID = 'bwAD2sApj2gzEhFKQ';
 
 // Form data type
 export interface FormData {
