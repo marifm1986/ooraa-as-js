@@ -75,10 +75,11 @@ export function useQuoteForm(options: UseQuoteFormOptions = {}) {
     setSubmitError(false);
 
     const templateParams = {
-      to_email: 'oxaleinfo@gmail.com',
+      to_email: 'ooraapartner@gmail.com',
       emailSubject: options.emailSubject || 'Request a Quote Mail from Jagdeep Singh | OORAA',
       fromName: options.fromName || 'Website Contact Form',
-      first_name: `${formData.firstName} ${formData.lastName}`,
+      first_name: formData.firstName,
+      last_name: formData.lastName,
       user_email: formData.email,
       user_phone: formData.phone,
       user_debt_amount: formData.debtAmount,
